@@ -87,73 +87,65 @@ const exams: Exam[] = [
 
 const TableComponent = () => {
     return (
-        <div className="p-6">
-            <div className="flex items-center justify-between mb-6">
-                <h1 className="text-xl font-semibold">Exam Board</h1>
-                <Link href="#" className="text-sm text-primary hover:underline">
-                    View all
-                </Link>
-            </div>
-            <div className="border rounded-lg">
-                <Table>
-                    <TableHeader>
-                        <TableRow>
-                            <TableHead>Exam Name</TableHead>
-                            <TableHead>Course</TableHead>
-                            <TableHead>Date</TableHead>
-                            <TableHead>Time</TableHead>
-                            <TableHead>Location</TableHead>
-                            <TableHead>Status</TableHead>
-                            <TableHead className="w-[50px]"></TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {
-                            exams.map((exam, index) => (
-                                <TableRow key={index}>
-                                    <TableCell className="font-medium">{exam.name}</TableCell>
-                                    <TableCell>{exam.course}</TableCell>
-                                    <TableCell>{exam.date}</TableCell>
-                                    <TableCell>{exam.time}</TableCell>
-                                    <TableCell>{exam.location}</TableCell>
-                                    <TableCell>
-                                        <Badge
-                                            variant={exam.status === "Completed" ? "secondary" : "default"}
-                                            className={
-                                                exam.status === "Completed"
-                                                    ? "bg-green-100 text-green-800 hover:bg-green-100"
-                                                    : "bg-blue-100 text-blue-800 hover:bg-blue-100"
-                                            }
-                                        >
-                                            {exam.status}
-                                        </Badge>
-                                    </TableCell>
-                                    <TableCell>
-                                        <DropdownMenu>
-                                            <DropdownMenuTrigger asChild>
-                                                <Button
-                                                    variant="ghost"
-                                                    className="h-8 w-8 p-0 hover:bg-muted"
-                                                >
-                                                    <MoreVertical className="h-4 w-4" />
-                                                    <span className="sr-only">Open menu</span>
-                                                </Button>
-                                            </DropdownMenuTrigger>
-                                            <DropdownMenuContent align="end">
-                                                <DropdownMenuItem>View details</DropdownMenuItem>
-                                                <DropdownMenuItem>Edit exam</DropdownMenuItem>
-                                                <DropdownMenuItem className="text-destructive">
-                                                    Cancel exam
-                                                </DropdownMenuItem>
-                                            </DropdownMenuContent>
-                                        </DropdownMenu>
-                                    </TableCell>
-                                </TableRow>
-                            ))
-                        }
-                    </TableBody>
-                </Table>
-            </div>
+        <div className="">
+            <Table>
+                <TableHeader>
+                    <TableRow>
+                        <TableHead>Exam Name</TableHead>
+                        <TableHead>Course</TableHead>
+                        <TableHead>Date</TableHead>
+                        <TableHead>Time</TableHead>
+                        <TableHead>Location</TableHead>
+                        <TableHead>Status</TableHead>
+                        <TableHead className="w-[50px]"></TableHead>
+                    </TableRow>
+                </TableHeader>
+                <TableBody>
+                    {
+                        exams.map((exam, index) => (
+                            <TableRow key={index}>
+                                <TableCell className="font-medium">{exam.name}</TableCell>
+                                <TableCell>{exam.course}</TableCell>
+                                <TableCell>{exam.date}</TableCell>
+                                <TableCell>{exam.time}</TableCell>
+                                <TableCell>{exam.location}</TableCell>
+                                <TableCell>
+                                    <Badge
+                                        variant={exam.status === "Completed" ? "secondary" : "default"}
+                                        className={
+                                            exam.status === "Completed"
+                                                ? "bg-green-100 text-green-800 hover:bg-green-100"
+                                                : "bg-blue-100 text-blue-800 hover:bg-blue-100"
+                                        }
+                                    >
+                                        {exam.status}
+                                    </Badge>
+                                </TableCell>
+                                <TableCell>
+                                    <DropdownMenu>
+                                        <DropdownMenuTrigger asChild>
+                                            <Button
+                                                variant="ghost"
+                                                className="h-8 w-8 p-0 hover:bg-muted"
+                                            >
+                                                <MoreVertical className="h-4 w-4" />
+                                                <span className="sr-only">Open menu</span>
+                                            </Button>
+                                        </DropdownMenuTrigger>
+                                        <DropdownMenuContent align="end">
+                                            <DropdownMenuItem>View details</DropdownMenuItem>
+                                            <DropdownMenuItem>Edit exam</DropdownMenuItem>
+                                            <DropdownMenuItem className="text-destructive">
+                                                Cancel exam
+                                            </DropdownMenuItem>
+                                        </DropdownMenuContent>
+                                    </DropdownMenu>
+                                </TableCell>
+                            </TableRow>
+                        ))
+                    }
+                </TableBody>
+            </Table>
         </div>
     )
 }

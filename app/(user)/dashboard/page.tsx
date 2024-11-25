@@ -9,8 +9,8 @@ const Dashboard = () => {
       <UpperPart />
 
       <section className='grid grid-cols-12'>
-        <section className='col-span-9'>
-          <section className='h-72 -mt-6 pl-7'>
+        <section className='col-span-9 space-y-6 pl-7'>
+          <section className='h-72 -mt-6'>
             <EnrolledCourses />
           </section>
           <section>

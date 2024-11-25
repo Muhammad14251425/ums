@@ -8,7 +8,7 @@ const layout = ({ children }: { children: ReactNode }) => {
             <nav className='col-span-3 xl:col-span-2'>
                 <Navbar />
             </nav>
-            <main className='col-span-9 xl:col-span-10 h-[200vh]'>
+            <main className='col-span-9 xl:col-span-10'>
                 <TopNav />
                 {children}
             </main>
